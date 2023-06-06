@@ -1,6 +1,4 @@
-class GreetingsController < ApplicationController
-  before_action :set_greeting, only: %i[ show edit update destroy ]
-
+class StaticController < ApplicationController
   # GET /greetings or /greetings.json
   def index
     return unless Greeting.all.empty?
@@ -10,5 +8,4 @@ class GreetingsController < ApplicationController
       Greeting.create(message: messages[i])
     end
   end
-
 end
