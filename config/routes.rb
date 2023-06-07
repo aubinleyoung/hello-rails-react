@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'static/index'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-
+    namespace :v1 do
+      resources :greetings, only: [:index]
+    end
+  
   # Defines the root path route ("/")
-  root 'static#index'
+  resources :greetings, only: [:index]
+  root "greetings#index"
 end
